@@ -1,17 +1,10 @@
-//for ("iterator"; "condition"; "iteration") {}
-
-/*for (const value of iterable) {
-
-}
-*/
-// functions should not return a hard-coded value, i.e., strings that only exists inside the function
-
-const count = 8;
+const count = 10;
 const rows = [];
-const character = "#";
+const character = "ô";
+let inverted = true;
 
+// TODO: change rowNumber to rowIndex and rowCount to rowQuantity
 function padRow(rowNumber, rowCount) {
-  // Picking row by rowNumber
   return (
     " ".repeat(rowCount - rowNumber) +
     character.repeat(2 * rowNumber - 1) +
@@ -19,25 +12,25 @@ function padRow(rowNumber, rowCount) {
   );
 }
 
-let continueLoop = false;
-let done = 0;
+/* upside down pyramid
+ * i-- === i -= 1
+ * for (let i = count; i > 0; i -= 1) {
+  rows.push(padRow(i, count));
+}*/
 
-while (continueLoop) {
-  done++;
+/*while (done !== count) {
   rows.push(padRow(done, count));
-  if (done === count) {
-    continueLoop = false;
+}*/
+
+for (let i = 1; i <= count; i++) {
+  if (inverted) {
+    rows.unshift(padRow(i, count));
+  } else {
+    rows.push(padRow(i, count));
   }
 }
 
 let result = "";
-
-// TODO: use a different type of loop
-/*for (let i = 1; i <= count; i++) {
-	rows.push(padRow(i, count));
-}*/
-// false, 0, "", null, undefined, and NaN are all falsy values for JavaScript
-// console.log(rows); => the array doesn't looks good as bricks
 
 for (const row of rows) {
   result = result + row + "\n";
