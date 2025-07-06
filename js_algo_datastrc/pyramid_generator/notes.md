@@ -1,7 +1,6 @@
  * Variable naming follows specific rules: names can include letters, numbers, dollar signs, and underscores, but cannot contain spaces and must not begin with a number.
  * Mutation is characteristic of non primitives data types, such as an array. It means it is mutable, can be changed, when otherwise, primitive data types can only be reassigned
  * A method is a funciton that is associated with certian variables and values
- * functions should not return a hard-coded value, i.e., strings that only exists inside the function
  * for functions:
   for (const value of iterable) {}
   for ("iterator"; "condition"; "iteration") {}
@@ -9,7 +8,7 @@
  * array.pop() => removes the last element from the array
  * for ("iterator"; "condition"; "iteration") {}
  * for (const value of iterable) {}
- * functions should not return a hard-coded value, i.e., strings that only exists inside the function
+ * functions should not return a hard-coded value, i.e., a vixed value, be it a string, a number or a variable that was never changed 
  * false, 0, "", null, undefined, and NaN are all falsy values for JavaScript
  * console.log(rows); => the array doesn't looks good as bricks
  * equality operator "==" if two variables are equal => "0" == 0 => true
